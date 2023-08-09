@@ -30,20 +30,20 @@
 											</div>
 										</td>
 										<td><span class="price">{{ number_format($item->price,0,',','.') }} đ</span></td>
-										<td><span class="price">6.590.000 đ</span></td>
-										<td><a href="#">Xóa</a></td>
+										<td><span class="price">{{ number_format($item->price*$item->quantity,0,',','.') }} đ</span></td>
+										<td><a href="{{ asset('cart/delete/'.$item->id) }}">Xóa</a></td>
 									</tr>
 									@endforeach
 								</table>
 								<div class="row" id="total-price">
 									<div class="col-md-6 col-sm-12 col-xs-12">										
-											Tổng thanh toán: <span class="total-price">50.000.000 đ</span>
+											Tổng thanh toán: <span class="total-price">{{ $total }} đ</span>
 																													
 									</div>
 									<div class="col-md-6 col-sm-12 col-xs-12">
 										<a href="#" class="my-btn btn">Mua tiếp</a>
 										<a href="#" class="my-btn btn">Cập nhật</a>
-										<a href="#" class="my-btn btn">Xóa giỏ hàng</a>
+										<a href="{{ asset('cart/delete/all') }}" class="my-btn btn">Xóa giỏ hàng</a>
 									</div>
 								</div>
 							</form>             	                	

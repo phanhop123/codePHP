@@ -54,7 +54,7 @@
 				</div>
 				<div id="cart" class="col-md-2 col-sm-12 col-xs-12">
 					<a class="display" href="#">Giỏ hàng</a>
-					<a href="#">6</a>				    
+					<a href="#">2</a>				    
 				</div>
 			</form>
 			</div>			

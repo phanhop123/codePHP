@@ -15,7 +15,8 @@ class CartController extends Controller
          'name' => $product->prod_name,
          'price' => $product->prod_price,
          'quantity' => 1,
-         'attributes'=>['img' => $product->prod_img]    
+         'attributes'=>['img' => $product->prod_img]  
+           
      ));
      return redirect('cart/show');
 
@@ -24,9 +25,24 @@ class CartController extends Controller
 
 
    public function getShowCart(){
+    $cartCollection['total'] = Cart::getTotal();
+    
    $cartCollection['items'] = Cart::getcontent();
    return view('frontend.cart',$cartCollection);
       
+   }
+
+
+   public function getDeleteCart($id)
+   
+
+   {
+    if($id=='all'){
+        Cart::clear();
+    }else{
+        Cart::remove($id);
+    }
+    return back();
    }
      
 }

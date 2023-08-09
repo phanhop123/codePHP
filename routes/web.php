@@ -33,6 +33,7 @@ Route::get('search',[FrontendController::class,'getSearch']);
 Route::group(['prefix'=>'cart'],function(){
     Route::get('add/{id}',[CartController::class,'getAddCart']);
     Route::get('show',[CartController::class,'getShowCart']);
+    Route::get('delete/{id}',[CartController::class,'getDeleteCart']);
 });
 
 Route::prefix('login')->group(function () {
