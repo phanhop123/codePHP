@@ -10,30 +10,23 @@ class CartController extends Controller
     //
     public function getAddCart($id){
         $product = Product::find($id);
-       
-      //   Cart::add(['id' => $id,
-      //   'name' => $product->prod_name,
-      //   'price' => $product->prod_price,
-      //   'quantity' => 1,
-      //   'options' => ['img'=> $product->prod_img]]);
-      //   return redirect('cart/show');
-      $cartCollection = Cart::getContent();
       Cart::add(array(
          'id' => $id, // inique row ID
          'name' => $product->prod_name,
          'price' => $product->prod_price,
          'quantity' => 1,
-         'attributes' => array('img'=> $product->prod_img)
-        
-
-        
+         'attributes'=>['img' => $product->prod_img]    
      ));
      return redirect('cart/show');
-        }
+
+     
+      }
 
 
-     public function getShowCart(){
-        $cartCollection['items'] = Cart::getContent();
-        return view('frontend.cart',$cartCollection);
-     }
+   public function getShowCart(){
+   $cartCollection['items'] = Cart::getcontent();
+   return view('frontend.cart',$cartCollection);
+      
+   }
+     
 }

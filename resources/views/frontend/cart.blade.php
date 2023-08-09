@@ -1,8 +1,7 @@
 @extends('frontend.master')
 @section('title','gio hang')
 @section('main')
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	
+<link rel="stylesheet" href="css/cart.css">	
 
 					<div id="wrap-inner">
 						<div id="list-cart">
@@ -17,14 +16,17 @@
 										<td width="16.6665%">Thành tiền</td>
 										<td width="11.112%">Xóa</td>
 									</tr>
+									
 									@foreach($items as $item)
 									<tr>
-										{{-- <td><img class="img-responsive" src="{{ asset('storage/storage/avatar/'.$item->$product->prod_img) }}"></td> --}}
+										<td><div id="product-img" class="col-xs-12 col-sm-12 col-md-3 text-center">
+											<img style=" width: 200px; height: 250px" src="{{ asset('storage/storage/avatar/'.$item->attributes['img']) }}">
+										</div></td>
 										<td>{{ $item->name }}</td>
-										<td>
+										<td>	
 											<div class="form-group">
 												<input class="form-control" type="number"
-												value="{{ $item->qty }}">
+												value="{{ $item->quantity }}">
 											</div>
 										</td>
 										<td><span class="price">{{ number_format($item->price,0,',','.') }} đ</span></td>

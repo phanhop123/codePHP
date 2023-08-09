@@ -61,6 +61,7 @@ class ProductController extends Controller
     $arr['prod_slug'] = Str::slug($request->name);
     $arr['prod_accessories'] = $request->accessories;
     $arr['prod_warranty'] = $request->warranty;
+    $arr['prod_price'] = $request->price;
     $arr['prod_promotion'] = $request->promotion;
     $arr['prod_condition'] = $request->condition;
     $arr['prod_status'] = $request->status;
