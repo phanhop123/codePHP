@@ -118,13 +118,13 @@
 							<!-- The slideshow -->
 							<div class="carousel-inner">
 								<div class="carousel-item active">
-									<img src="img/home/slide-1.png" alt="Los Angeles" >
+									<img src="img/home/slide-1.png" alt="Los Angeles" height="280px" >
 								</div>
 								<div class="carousel-item">
-									<img src="img/home/slide-2.png" alt="Chicago">
+									<img src="img/home/slide-2.png" alt="Chicago" height="280px">
 								</div>
 								<div class="carousel-item">
-									<img src="img/home/slide-3.png" alt="New York" >
+									<img src="img/home/slide-3.png" alt="New York" height="280px" >
 								</div>
 							</div>
 

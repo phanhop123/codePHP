@@ -84,9 +84,9 @@
 							</div>
 						</div>
 					</div>
-					<div id="scroll">
+					{{-- <div id="scroll">
 						<a href="#"><img src="img/home/scroll.png"></a>
-					</div>	
+					</div>	 --}}
 				</div>
 			</div>
 		</footer>
