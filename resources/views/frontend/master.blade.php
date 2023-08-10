@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Vietpro Shop - Home</title>
+	<title> Shop - Home</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/home.css">
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -39,7 +39,7 @@
 			<div class="row">
 				<div id="logo" class="col-md-3 col-sm-12 col-xs-12">
 					<h1>
-						<a href="{{ asset('/') }}"><img src="img/home/logo.png"></a>						
+						<a href="{{ asset('/') }}"><img src="img/home/logo.png" width="100px"></a>						
 						<nav><a id="pull" class="btn btn-danger" href="#">
 							<i class="fa fa-bars"></i>
 						</a></nav>			
@@ -53,8 +53,8 @@
 					<input  type="submit" value="Tìm Kiếm">
 				</div>
 				<div id="cart" class="col-md-2 col-sm-12 col-xs-12">
-					<a class="display" href="#">Giỏ hàng</a>
-					<a href="#">2</a>				    
+					<a class="display" href="{{ asset('cart/show') }}">Giỏ hàng</a>
+					<a href="{{ asset('cart/show') }}">0</a>				    
 				</div>
 			</form>
 			</div>			

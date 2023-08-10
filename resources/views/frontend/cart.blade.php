@@ -2,10 +2,23 @@
 @section('title','gio hang')
 @section('main')
 <link rel="stylesheet" href="css/cart.css">	
-
+<script type="text/javascript">
+	function updateCart(quantity,rowId){
+		$.get(
+			{{ asset('cart/update') }},
+			{quantity:quantity,rowId:rowId},
+			function(){
+				location.reload();
+			}
+		);
+		
+	
+	}
+</script>
 					<div id="wrap-inner">
 						<div id="list-cart">
 							<h3>Giỏ hàng</h3>
+							
 							<form>
 								<table class="table table-bordered .table-responsive text-center">
 									<tr class="active">
@@ -26,7 +39,7 @@
 										<td>	
 											<div class="form-group">
 												<input class="form-control" type="number"
-												value="{{ $item->quantity }}">
+												value="{{ $item->quantity }}" onchange="updateCart(this.value,'{{ $item->rowId }}')">
 											</div>
 										</td>
 										<td><span class="price">{{ number_format($item->price,0,',','.') }} đ</span></td>
@@ -41,7 +54,7 @@
 																													
 									</div>
 									<div class="col-md-6 col-sm-12 col-xs-12">
-										<a href="#" class="my-btn btn">Mua tiếp</a>
+										<a href="{{ asset('/') }}" class="my-btn btn">Mua tiếp</a>
 										<a href="#" class="my-btn btn">Cập nhật</a>
 										<a href="{{ asset('cart/delete/all') }}" class="my-btn btn">Xóa giỏ hàng</a>
 									</div>
@@ -51,7 +64,7 @@
 
 						<div id="xac-nhan">
 							<h3>Xác nhận mua hàng</h3>
-							<form>
+							<form method="post">
 								<div class="form-group">
 									<label for="email">Email address:</label>
 									<input required type="email" class="form-control" id="email" name="email">
@@ -71,6 +84,7 @@
 								<div class="form-group text-right">
 									<button type="submit" class="btn btn-default">Thực hiện đơn hàng</button>
 								</div>
+								{{ csrf_field() }}
 							</form>
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('title','danh mục sản phẩm ')
 @section('main')
-	<link rel="stylesheet" href="css/category.css">
+<link rel="stylesheet" href="public/layout/frontend/css/category.css">
 	
 <div id="wrap-inner">
 						<div class="products">

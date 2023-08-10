@@ -1,7 +1,7 @@
 @extends('frontend.master')
 @section('title','trang chu')
 @section('main')
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/search.css">
 	
 
 					<div id="wrap-inner">

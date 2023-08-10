@@ -34,8 +34,10 @@ Route::group(['prefix'=>'cart'],function(){
     Route::get('add/{id}',[CartController::class,'getAddCart']);
     Route::get('show',[CartController::class,'getShowCart']);
     Route::get('delete/{id}',[CartController::class,'getDeleteCart']);
+    Route::get('update',[CartController::class,'getUpdateCart']);
+    Route::post('show',[CartController::class,'postComplete']);
 });
-
+Route::get('complete',[CartController::class,'getComplete']);
 Route::prefix('login')->group(function () {
     Route::get('/', [LoginController::class, 'getlogin']);
     Route::post('/', [LoginController::class, 'postlogin'])->name('login.ok'); 
